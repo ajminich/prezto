@@ -17,10 +17,7 @@
 # Execute code only if STDERR is bound to a TTY.
 [[ -o INTERACTIVE && -t 2 ]] && {
 
-  # Print a random, hopefully interesting, adage.
-  if (( $+commands[fortune] )); then
-    fortune -s
-    print
-  fi
+# Jarvis welcome message
+echo -e "\033[96mWelcome back to $(hostname), sir.\033[00m"
 
 } >&2

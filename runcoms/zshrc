@@ -10,4 +10,21 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Set up history
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=9999
+SAVEHIST=$HISTSIZE
+
+setopt appendhistory
+setopt extendedhistory
+setopt histignoredups
+setopt sharehistory
+
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
+
+if [ -f ~/etc/zshrc ]; then
+    source ~/etc/zshrc
+fi
+
