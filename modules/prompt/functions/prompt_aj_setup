@@ -29,11 +29,11 @@ function prompt_aj_setup {
   zstyle ':prezto:module:git:info:branch' format '%b'
   zstyle ':prezto:module:git:info:remote' format '%R'
   zstyle ':prezto:module:git:info:action' format '%s'
-  zstyle ':prezto:module:git:info:ahead' format ' %F{green}+%A%f'
-  zstyle ':prezto:module:git:info:behind' format ' %F{red}-%B%f'
+  zstyle ':prezto:module:git:info:ahead' format ' %F{green}%A⬆%f'
+  zstyle ':prezto:module:git:info:behind' format ' %F{red}%B⬇%f'
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' '$(coalesce "%s" "%R" "%b" "%p" "%A" "%B")${git_info[rprompt]}%s' \
-    'rprompt' '%C%D'
+    'prompt' ' %F{cyan}($(coalesce "%s" "%R" "%b" "%p")${git_info[rprompt]}%s%F{cyan})%f' \
+    'rprompt' '%A%B%C%D'
 
   # Set the preamble: time username@hostname
   preamble='%F{white}%* %n@%m%f'
@@ -42,7 +42,7 @@ function prompt_aj_setup {
   [[ -w $PWD ]] && currentdir='%F{green}%~%f' || currentdir='%F{yellow}%~%f'
 
   # Define prompts.
-  PROMPT='${preamble}:${currentdir} %F{cyan}($f${(e)git_info[prompt]}%F{cyan})%f
+  PROMPT='${preamble}:${currentdir}${(e)git_info[prompt]}
 %F{white}>%f '
   RPROMPT=''
 }

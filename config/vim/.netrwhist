@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/ajminich/.config/xm1'
+let g:netrw_dirhist_2='/Users/ajminich/.ipython/profile_default'
+let g:netrw_dirhist_3='/Users/ajminich/programs/Genjutsu/Genjutsu.xcodeproj/project.xcworkspace'
+let g:netrw_dirhist_4='/Users/ajminich/programs/Genjutsu/Genjutsu.xcodeproj/project.xcworkspace/xcuserdata/ajminich.xcuserdatad'
+let g:netrw_dirhist_5='/Users/ajminich/programs/Jarvis/.settings'
+let g:netrw_dirhist_6='/Users/ajminich/.zprezto'
+let g:netrw_dirhist_7='/Users/ajminich/programs/zprezto/zprezto'

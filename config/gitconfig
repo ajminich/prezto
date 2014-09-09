@@ -1,0 +1,34 @@
+[user]
+	name = AJ Minich
+	email = aj@ajminich.com
+[color]
+	ui = auto
+[branch]
+	autosetupmerge = true
+[push]
+	default = current
+[color "branch"]
+	current = yellow bold
+	remote = cyan bold
+[color "diff"]
+	new = yellow bold
+	old = red bold
+	frag = white bold
+	meta = cyan bold
+	commit = white bold
+[color "status"]
+	added = yellow bold
+	changed = cyan bold
+	untracked = red bold
+[github]
+	user = ajminich
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[credential]
+    helper = cache --timeout=6400
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    ignore = !git update-index --assume-unchanged 
+    unignore = !git update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep ^[a-z]

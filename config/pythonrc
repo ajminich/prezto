@@ -1,0 +1,20 @@
+# Standard imports and setups, as suggested by
+# http://valueerror.wordpress.com/2009/11/03/python-shell-history-autocompletion-and-rc-file/.
+
+import atexit
+from datetime import datetime, timedelta
+import numpy as np
+import os
+import pandas as pd
+import readline
+import timeit
+
+history = os.path.expanduser('~/.python_history')
+if os.path.exists(history):
+    readline.read_history_file(history)
+    readline.parse_and_bind('tab: complete')
+
+atexit.register(readline.write_history_file, history)
+
+def t(*args):
+    return timeit.Timer(*args).timeit()

@@ -9,15 +9,26 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ln -s "${DIR}" ${ZDOTDIR:-$HOME}/.zprezto
 
 setopt EXTENDED_GLOB
-for rcfile in "${DIR}"/runcoms/^README.md(.N); do
-  destination="${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  if [ -f $destination ];
-  then
-    echo "Setup file ${destination} already exists."
-  else
-    ln -s "$rcfile" "${destination}"
-    echo "Successfully set up ${destination}."
-  fi
-done
+
+linkfolder ()
+{
+    foldername=${1}
+    for rcfile in "${DIR}"/${foldername}/^README.md(.N); do
+        destination="${ZDOTDIR:-$HOME}/.${rcfile:t}"
+        if [ -f $destination ];
+        then
+            echo "Setup file ${destination} already exists."
+        else
+            ln -s "$rcfile" "${destination}"
+            echo "Successfully set up ${destination}."
+        fi
+    done
+}
+
+linkfolder runcoms
+linkfolder config
+
+# Link to the vim setup folder
+ln -s ${DIR}/vim ${ZDOTDIR:-$HOME}/.vim
 
 echo "Setup complete."
