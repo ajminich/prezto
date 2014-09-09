@@ -52,12 +52,15 @@ alias _='sudo'
 alias b='${(z)BROWSER}'
 
 alias diffu="diff --unified"
+alias cp="${aliases[cp]:-cp} -v"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
 alias mkdir="${aliases[mkdir]:-mkdir} -p"
 alias p='${(z)PAGER}'
 alias po='popd'
 alias pu='pushd'
 alias sa='alias | grep -i'
+alias mv="${aliases[mv]:-mv} -v"
+alias rm="${aliases[rm]:-rm}"
 alias type='type -a'
 
 # Safe ops. Ask the user before doing anything destructive.
@@ -75,10 +78,11 @@ fi
 # ls
 if is-callable 'dircolors'; then
   # GNU Core Utilities
-
   if zstyle -T ':prezto:module:utility:ls' dirs-first; then
     alias ls="${aliases[ls]:-ls} --group-directories-first"
   fi
+
+  alias ls='ls -lh --group-directories-first'
 
   if zstyle -t ':prezto:module:utility:ls' color; then
     # Call dircolors to define colors if they're missing
@@ -110,6 +114,14 @@ else
     alias ls="${aliases[ls]:-ls} -G"
   else
     alias ls="${aliases[ls]:-ls} -F"
+
+    # Define colors for BSD ls.
+    export LSCOLORS='gxfxcxdxbxGxDxabagacad'
+
+    # Define colors for the completion system.
+    export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
+
+    alias ls='ls -lhG'
   fi
 fi
 
