@@ -9,6 +9,6 @@ function gits {
 # An updater function so that pulls are fast-forward merged.
 function gitup {
     git remote update -p
-    git merge --ff-only @{u}
+    git merge --ff-only "@{u}"
 }
 
