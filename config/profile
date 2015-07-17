@@ -42,6 +42,9 @@ export VISUAL=vim
 # Bind Ctrl-R to history search
 bindkey "^R" history-incremental-search-backward
 
+# Use emacs command set
+set -o emacs
+
 # Python initial imports
 export PYTHONSTARTUP=${HOME}/.pythonrc
 
