@@ -40,7 +40,7 @@ export EDITOR=vim
 export VISUAL=vim
 
 # Bind Ctrl-R to history search
-bindkey "^R" history-incremental-search-backward
+command -v bindkey "^R" history-incremental-search-backward >/dev/null 2>&1
 
 # Use emacs command set
 set -o emacs
