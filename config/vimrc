@@ -56,6 +56,9 @@ set smartindent
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
+" Set git commit line length to 80 characters
+au FileType gitcommit setlocal tw=80
+
 syntax enable
 
 " Select appropriate color scheme for graphics
