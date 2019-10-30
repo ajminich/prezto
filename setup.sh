@@ -29,6 +29,6 @@ linkfolder runcoms
 linkfolder config
 
 # Link to the vim setup folder
-ln -s ${DIR}/vim ${ZDOTDIR:-$HOME}/.vim
+ln -s ${DIR}/config/vim ${ZDOTDIR:-$HOME}/.vim
 
 echo "Setup complete."
